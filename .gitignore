@@ -1,0 +1,37 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+.env
+
+# --- Tooling (Ruff & Mypy) ---
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# --- Data ---
+data/**/*
+!data/stats.json
+!data/label_map.json
+!data/**/*.gitkeep
+
+# --- Large Files ---
+*.mp3
+*.wav
+*.flac
+*.parquet
+*.arrow
+*.pt
+*.pth
+*.ckpt
+
+# --- IDE & Logs ---
+.vscode/
+.idea/
+.DS_Store
+logs/
+outputs/    # Hydra outputs
+multirun/   # Hydra multirun
