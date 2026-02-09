@@ -2,7 +2,7 @@ defaults:
   - _self_
 
 data:
-  raw_path: "data/raw/fma_large"
+  raw_path: "data/raw/fma_small"
   processed_path: "data/processed/fma_arrow"
   sample_rate: 32000
   num_classes: 8          # Quan trọng: Hardcode số lượng Genre để Model Output Layer dùng
@@ -13,6 +13,9 @@ audio:
   hop_length: 320         # BẮT BUỘC: 32000 * 3 / 320 = 300 frames
   duration: 3             # seconds
   segment_overlap: 1.5    # 50% overlap cho Data Augmentation
+  f_min: 0
+  f_max: 16000            # Tần số tối đa (SR/2)
+  norm_type: "slaney"     # Đồng bộ hóa với chuẩn Librosa/Torchaudio SOTA
 
 training:
   batch_size: ???
