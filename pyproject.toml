@@ -12,17 +12,21 @@ requires-python = ">=3.11"
 keywords = ["audio", "deep-learning", "music-classification", "pytorch", "polars"]
 
 dependencies = [
-    "torch>=2.10.0",             # Tối ưu hóa cho CUDA 13.x và kiến trúc H200/B200
-    "torchaudio>=2.10.0",        # Hỗ trợ TorchCodec cho việc decode audio siêu tốc trên GPU
-    "polars>=1.38.1",            # Bản ổn định 2026 với Lazy API và tối ưu hóa Multi-core Rust
-    "datasets>=3.1.0",          # Tối ưu hóa zero-copy cho audio datasets cực lớn
+    "torch>=2.10.0",            # Tối ưu hóa cho CUDA 13.x và kiến trúc H200/B200
+    "torchaudio>=2.10.0",       # Hỗ trợ TorchCodec cho việc decode audio siêu tốc trên GPU
+    "polars>=1.38.1",           # Bản ổn định 2026 với Lazy API và tối ưu hóa Multi-core Rust
+    "datasets>=4.5.0",          # Tối ưu hóa zero-copy cho audio datasets cực lớn
+    "huggingface_hub[cli]>=1.4.1",
+    "dvc>=3.50.0",              # Quản lý dữ liệu
+    "dvc-s3>=3.0.0",            # Kết nối S3
     "hydra-core>=1.3.2",        # Quản lý cấu hình dạng Module
-    "scikit-learn>=1.8.1",      # Cập nhật thuật toán chia tập StratifiedGroupKFold
+    "scikit-learn>=1.8.0",      # Cập nhật thuật toán chia tập StratifiedGroupKFold
     "pyarrow>=23.0.0",          # Backend cho Polars và Datasets (Arrow IPC 2026)
     "numpy>=2.4.2",             # Numpy 2.x với hiệu suất vectorization vượt trội
     "python-dotenv>=1.0.1",
     "tqdm>=4.67.0",
-    "fsspec>=2025.12.0",        # Quan trọng để quản lý file hệ thống trong Hugging Face
+    "fsspec==2025.10.0",        # Quan trọng để quản lý file hệ thống trong Hugging Face
+    "s3fs==2025.10.0",
     "soundfile>=0.13.0",        # Fallback backend cho librosa-compatible tasks
 ]
 
