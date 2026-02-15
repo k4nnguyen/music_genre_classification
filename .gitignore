@@ -6,6 +6,7 @@ __pycache__/
 venv/
 env/
 .env
+*.egg-info/
 
 # --- Tooling (Ruff & Mypy) ---
 .ruff_cache/
@@ -22,11 +23,19 @@ data/**/*
 *.mp3
 *.wav
 *.flac
+*.zip
 *.parquet
 *.arrow
 *.pt
 *.pth
 *.ckpt
+
+# --- Debug / Temp Output ---
+test_audio.txt
+test_audio_err.txt
+
+# --- Local Docs ---
+*.docx
 
 # --- IDE & Logs ---
 .vscode/
