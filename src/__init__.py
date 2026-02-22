@@ -1,1 +1,1 @@
-
+"""Audio Classifier - src package."""
