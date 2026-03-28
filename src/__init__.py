@@ -1,1 +1,0 @@
-"""Audio Classifier - src package."""
