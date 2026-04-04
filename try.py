@@ -142,16 +142,7 @@ def predict_30s(audio_path, model, inv_label_map, offset=0.0):
         prob = top_probs[0][i].item() * 100
         results.append((genre, prob))
         
-    return results
+    return dict(results)
 
-# --- PHẦN GỌI HÀM VÀ IN KẾT QUẢ ---
-print(f"--- Đang phân tích file: {os.path.basename(AUDIO_PATH)} ---")
-try:
-    top3_results = predict_30s(AUDIO_PATH, model, inv_label_map, offset=268.0)
+top3_results = predict_30s(AUDIO_PATH, model, inv_label_map, offset=268.0)
     
-    print("\nKẾT QUẢ DỰ ĐOÁN (TOP 3):")
-    for genre, prob in top3_results:
-        print(f"{genre.upper()} - {prob:.2f}%")
-
-except Exception as e:
-    print(f"Lỗi: {e}")
